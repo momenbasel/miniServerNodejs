@@ -36,21 +36,22 @@ rl.on('close', function()
 		// setting content type to accept HTML 
 
 
-		fs.readFile(path, function(err, data)
+		fs.readFile(path,'UTF-8',function(err, data)
 		{
 			if(err){
 				throw err;
 			}
 			res.end(data);
 
-			var ip = req.headers['x-forwarded-for'] || 
-			req.connection.remoteAddress || 
-			req.socket.remoteAddress ||
-			req.connection.socket.remoteAddress;
-			// getting the ip address of the client
-
-			util.log("request received from: " + ip);
 		});
+
+	var ip = req.headers['x-forwarded-for'] || 
+	req.connection.remoteAddress || 
+	req.socket.remoteAddress ||
+	req.connection.socket.remoteAddress;
+	// getting the ip address of the client
+
+	util.log(`${req.method} request sent to ${req.url} from ${ip}`);
 	});
 
 
