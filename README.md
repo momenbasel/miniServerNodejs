@@ -6,7 +6,7 @@ Requirement
 ----------
 
 * you need to download and install Nodejs on your operating system   (https://nodejs.org/en/)
-* any Command line
+* your CLI 
 * Yes thats all you need! 😂
 
 ### Steps to use
